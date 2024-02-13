@@ -1,0 +1,88 @@
+﻿@page "/"
+@using Imc.Classes
+@inject HistoryService HistoryService
+
+<PageTitle>Home</PageTitle>
+
+<div class="container">
+    <div>
+        <div>
+            <h1>Cálculo de IMC</h1>
+        </div>
+        <div class="input-container">
+            <input type="number" placeholder="Altura"  @bind="Value1" class="input" required/>
+            <input type="number" placeholder="Peso" @bind="Value2" class="input" required/>
+            <select @bind="Gender" class="input input-select" placeholder="Sexo" >
+                <option>Masculino</option>
+                <option>Feminino</option>
+            </select>
+            <div class="checkbox">
+                <input type="checkbox" @bind="IsIdoso"/><span> Eu tenho 65 anos ou mais</span>
+            </div>
+        </div>
+        <div class="button-container">
+            <ButtonB Text="Calcular meu IMC" OnClick="@CalcularIMC"/>
+            <ButtonW Text="Entenda o cálculo" OnClick="@PageCalc"/>
+        </div>
+    </div>
+</div>
+
+@code{
+
+    [Inject]
+    private NavigationManager NavigationManager { get; set; }
+    public double? Value1{ get; set; } //altura
+    public double? Value2{ get; set; } //peso
+    public double? IMC { get; set; } //IMC
+    public bool IsIdoso { get; set; }
+    public string Gender { get; set; }
+    public string Resultado { get; set; }
+
+    private void CalcularIMC()
+    {
+        if(Value1 != null && Value2 != null && Value1 > 0 && Value2 > 0) 
+        {
+            IMC = Value2 / (Value1 * Value1);
+        }
+        else
+        {
+            IMC = null;
+        }
+
+        if(IsIdoso && IMC < 27 && IMC != null)
+        {
+            Resultado = "Ok";
+        }
+        else if(IsIdoso && IMC > 27 && IMC != null)
+        {
+            Resultado = "NotOk";
+        }
+        else if(!IsIdoso && IMC < 25 && IMC != null)
+        {
+            Resultado = "Ok";
+        }
+        else if(!IsIdoso && IMC > 25 && IMC != null)
+        {
+            Resultado = "NotOk";
+        }
+
+        if(Resultado == "Ok")
+        {
+            HistoryService.AdicionarAoHistorico("Peso ideal");
+
+            NavigationManager.NavigateTo($"/result/{Resultado}");
+        }
+        else
+        {
+            HistoryService.AdicionarAoHistorico("Sobrepeso!");
+            
+            NavigationManager.NavigateTo($"/result/{Resultado}");
+        }
+    }
+
+    public void PageCalc()
+    {
+        NavigationManager.NavigateTo($"/calc");
+    }
+
+}

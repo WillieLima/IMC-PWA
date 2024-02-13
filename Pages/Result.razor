@@ -1,0 +1,17 @@
+@page "/result/{resultado}"
+
+<div>
+    @if(Resultado == "Ok")
+    {
+        <ResultUW/>
+    }
+    else if(Resultado == "NotOk")
+    {
+        <ResultOW/>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public string Resultado { get; set;  }
+}

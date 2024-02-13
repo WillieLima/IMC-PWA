@@ -1,0 +1,57 @@
+@page "/resultow"
+@using Imc.Classes;
+@inject HistoryService HistoryService
+
+<div class="container">
+    <div>
+        <div class="img-container">
+            <div class="img-container2">
+                <img src="./icon-no-bg.png" alt="imc" class="img-result">
+            </div>
+        </div>
+    </div>
+    <div class="result">        
+        <div>
+            <div class="congrat-container">
+                <i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="red" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                    </svg>
+                </i>
+                <h2>Sobrepeso</h2>
+            </div>
+            <div class="text-result">
+                <span>
+                    Cuidado! Você está com sobrepeso, dê uma atenção para sua saúde.
+                </span>
+            </div>
+        </div>
+        <div class="button-result">
+            <ButtonB Text="Registrar medidas" OnClick="@RegisterOnHistory"/>
+            <ButtonW Text="Ver meu Histórico" OnClick="@RedirectToHistory"/>
+        </div>
+    </div>
+</div>
+
+@code {
+
+    [Inject]
+    private NavigationManager NavigationManager { get; set; }
+    public void RedirectToHistory()
+    {
+        NavigationManager.NavigateTo("/History");
+    }
+
+    public void RegisterOnHistory()
+    {
+        try
+        {
+            NavigationManager.NavigateTo("/history");
+        }
+        catch(Exception ex)
+        {
+            Console.WriteLine("Erro ao adicionar na lista" + ex.Message);
+        }
+    }
+}
