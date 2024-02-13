@@ -33,11 +33,11 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-NJTUoLHNh7Gf13AxdLoqBsCibLz4vOljt6JzPea9gG4=",
+      "hash": "sha256-ysSlAfJoWH\/ZjmxZMNOo377e457pXGIIho8eTxGYkng=",
       "url": "_framework\/blazor.boot.json"
     },
     {
-      "hash": "sha256-Py4kUhIZj6NCzR2xs5rnNaZx3PexZ3XQjNTlOEY3te0=",
+      "hash": "sha256-YaCUGBpj4lmYAFLsK3qAdGxSBWcZUZz17hnc2oMlh0o=",
       "url": "_framework\/Imc.wasm"
     },
     {
@@ -205,5 +205,5 @@
       "url": "manifest.webmanifest"
     }
   ],
-  "version": "9y3rvvh7"
+  "version": "AcoL94lY"
 };
