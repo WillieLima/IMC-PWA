@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Imc",
   "resources": {
-    "hash": "sha256-QJqSSbTGVCGSQg7krxs77SAKg9rEZiBQcRCUXfWP5Mc=",
+    "hash": "sha256-PJv+i57wPzhhifRd00lAzp+7QgGysb2UCQw/pLWvCHU=",
     "jsModuleNative": {
       "dotnet.native.8.0.2.jgt5nhn140.js": "sha256-gPMK16QWoJSTxorlZJqcVtbBRTniIQWlLsJN2O4cJHg="
     },
@@ -17,7 +17,7 @@
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
     "assembly": {
-      "Imc.wasm": "sha256-uCiQPAVoxAsRd/QvdZxSIas7LWnj+Enprz7PGnwB1MU=",
+      "Imc.wasm": "sha256-Py4kUhIZj6NCzR2xs5rnNaZx3PexZ3XQjNTlOEY3te0=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-AHFtf9MGtM3TxnEOOIWa/9Qi6lK/abpUjmF94g31Ex0=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-mmo6S4AxiBcnKbs4b+7ObftqPCkIcLGiAv9gICT/5NY=",
       "Microsoft.AspNetCore.Components.WebAssembly.wasm": "sha256-d6tN87QrJstiTMcLaUtZ6TWiNHa8A74Suuzx95thRrE=",
